@@ -24,6 +24,12 @@ ORDER = [
     "tu-dong-hoa-quy-trinh-cong-viec-bang-ai-agent",
     "huong-dan-tao-ai-agent-phan-loai-email-tu-dong",
     "khi-nao-nen-dung-ai-agent-cho-doanh-nghiep",
+    "giao-thuc-mcp-ung-dung-doanh-nghiep",
+    "json-prompt-la-gi",
+    "9-prompt-bat-tu-duy-phan-bien",
+    "huong-dan-su-dung-gamma-app-tao-bai-thuyet-trinh-tu-dong",
+    "prompt-phuc-che-anh-cu-bang-chatgpt",
+    "tu-hoc-ai-cho-nguoi-moi-bat-dau-tu-hoc-ai-trong-6-tuan",
 ]
 
 e = html.escape
@@ -91,7 +97,7 @@ def chrome_top():
     return f"""<body>
 <div class="topbar">Học AI Agent bằng tiếng Việt — <span>áp dụng vào công việc thật.</span></div>
 <header class="wrap nav">
-<a class="brand" href="/" aria-label="{SITE_NAME}, về trang chủ"><span class="brandmark"><img src="/assets/logo.svg" alt="" width="26" height="26"></span><span>aiagent<span style="color:#4a86e8">.vn</span></span></a>
+<a class="brand" href="/" aria-label="{SITE_NAME}, về trang chủ"><span class="brandmark"><img src="/assets/logo.svg" alt="" width="38" height="38"></span><span>aiagent<span style="color:#4a86e8">.vn</span></span></a>
 <nav class="navlinks" aria-label="Điều hướng chính"><a href="/">Trang chủ</a><a href="/bai-viet/">Bài viết</a><a href="/#explore">Tài nguyên</a></nav>
 </header>
 """

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f2036">
+<title>JSON Prompt là gì? Cách viết prompt dạng JSON và khi nào nên dùng | AI Agent Việt Nam</title>
+<meta name="description" content="JSON prompt là cách viết yêu cầu cho AI theo cấu trúc JSON để rõ ràng và dễ lặp lại. Giải thích khi nào hiệu quả, mẫu prompt cho văn bản và hình ảnh, lỗi thường gặp.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://aiagent.vn/json-prompt-la-gi/">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="AI Agent Việt Nam">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSON Prompt là gì? Cách viết prompt dạng JSON và khi nào nên dùng | AI Agent Việt Nam">
+<meta property="og:description" content="JSON prompt là cách viết yêu cầu cho AI theo cấu trúc JSON để rõ ràng và dễ lặp lại. Giải thích khi nào hiệu quả, mẫu prompt cho văn bản và hình ảnh, lỗi thường gặp.">
+<meta property="og:url" content="https://aiagent.vn/json-prompt-la-gi/">
+<meta property="og:image" content="https://aiagent.vn/assets/og.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/article.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "JSON Prompt là gì? Cách viết prompt dạng JSON và khi nào nên dùng", "description": "JSON prompt là cách viết yêu cầu cho AI theo cấu trúc JSON để rõ ràng và dễ lặp lại. Giải thích khi nào hiệu quả, mẫu prompt cho văn bản và hình ảnh, lỗi thường gặp.", "inLanguage": "vi-VN", "datePublished": "2026-10-22", "dateModified": "2026-10-22", "mainEntityOfPage": "https://aiagent.vn/json-prompt-la-gi/", "image": "https://aiagent.vn/assets/og.svg", "keywords": "json prompt là gì, prompt json, viết prompt dạng json", "author": {"@type": "Organization", "name": "AI Agent Việt Nam", "url": "https://aiagent.vn"}, "publisher": {"@type": "Organization", "name": "AI Agent Việt Nam", "url": "https://aiagent.vn"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://aiagent.vn/"}, {"@type": "ListItem", "position": 2, "name": "Bài viết", "item": "https://aiagent.vn/bai-viet/"}, {"@type": "ListItem", "position": 3, "name": "JSON Prompt là gì? Cách viết prompt dạng JSON và khi nào nên dùng", "item": "https://aiagent.vn/json-prompt-la-gi/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "JSON prompt có tốt hơn prompt thường không?", "acceptedAnswer": {"@type": "Answer", "text": "Không phải lúc nào cũng tốt hơn. JSON giúp yêu cầu có cấu trúc, ít bỏ sót và dễ tái sử dụng, nhưng với yêu cầu đơn giản, một câu văn thường đủ và tự nhiên hơn."}}, {"@type": "Question", "name": "Có cần biết lập trình để viết JSON prompt không?", "acceptedAnswer": {"@type": "Answer", "text": "Không cần, chỉ cần nắm cú pháp cơ bản: cặp khóa và giá trị, dấu ngoặc nhọn, dấu phẩy, chuỗi đặt trong dấu nháy kép. Có thể nhờ AI kiểm tra giúp cú pháp."}}, {"@type": "Question", "name": "JSON prompt khác yêu cầu đầu ra JSON thế nào?", "acceptedAnswer": {"@type": "Answer", "text": "JSON prompt là cách bạn viết đầu vào theo cấu trúc JSON. Yêu cầu đầu ra JSON là bạn bảo mô hình trả lời bằng JSON. Hai việc độc lập, có thể dùng riêng hoặc kết hợp."}}]}</script>
+</head>
+<body>
+<div class="topbar">Học AI Agent bằng tiếng Việt — <span>áp dụng vào công việc thật.</span></div>
+<header class="wrap nav">
+<a class="brand" href="/" aria-label="AI Agent Việt Nam, về trang chủ"><span class="brandmark"><img src="/assets/logo.svg" alt="" width="38" height="38"></span><span>aiagent<span style="color:#4a86e8">.vn</span></span></a>
+<nav class="navlinks" aria-label="Điều hướng chính"><a href="/">Trang chủ</a><a href="/bai-viet/">Bài viết</a><a href="/#explore">Tài nguyên</a></nav>
+</header>
+<main class="narrow">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Trang chủ</a> › <a href="/bai-viet/">Bài viết</a> › Learn</nav>
+<header class="article-head"><span class="kicker">Learn</span><h1>JSON Prompt là gì? Cách viết prompt dạng JSON và khi nào nên dùng</h1>
+<p class="lede">JSON prompt là cách viết yêu cầu cho AI theo cấu trúc JSON để rõ ràng và dễ lặp lại. Giải thích khi nào hiệu quả, mẫu prompt cho văn bản và hình ảnh, lỗi thường gặp.</p>
+<div class="meta"><span>Đăng ngày <time datetime="2026-10-22">22/10/2026</time></span><span>Cập nhật <time datetime="2026-10-22">22/10/2026</time></span><span>7 phút đọc</span></div></header>
+<nav class="toc" aria-label="Mục lục"><strong>Nội dung bài viết</strong><ol><li><a href="#vi-du-so-sanh">Ví dụ so sánh prompt thường và JSON prompt</a></li><li><a href="#khi-nao">Khi nào nên dùng JSON prompt?</a></li><li><a href="#vi-du-hinh-anh">Ví dụ JSON prompt cho tạo hình ảnh</a></li><li><a href="#cach-viet">Cách viết JSON prompt hiệu quả</a></li><li><a href="#loi-thuong-gap">Lỗi thường gặp</a></li></ol></nav>
+<article class="prose">
+<p><strong>JSON prompt</strong> là cách viết yêu cầu gửi cho AI dưới dạng cấu trúc JSON: các thông tin như vai trò, nhiệm vụ, ràng buộc, định dạng đầu ra được đặt vào các <em>khóa</em> riêng thay vì viết thành một đoạn văn dài. Mục tiêu là <strong>rõ ràng, đầy đủ và dễ lặp lại</strong>, đặc biệt hữu ích khi bạn dùng cùng một khung yêu cầu nhiều lần hoặc tạo ảnh, video với nhiều thông số.</p>
+
+<h2 id="vi-du-so-sanh">Ví dụ so sánh prompt thường và JSON prompt</h2>
+<p><strong>Prompt thường:</strong></p>
+<pre>Viết giúp tôi email ngắn gọn, lịch sự gửi khách hàng thông báo
+đơn hàng giao trễ 2 ngày, xin lỗi và tặng mã giảm 10%.</pre>
+<p><strong>JSON prompt:</strong></p>
+<pre>{
+  "vai_tro": "Nhân viên chăm sóc khách hàng của cửa hàng X",
+  "nhiem_vu": "Viết email thông báo đơn hàng giao trễ",
+  "thong_tin": {
+    "so_ngay_tre": 2,
+    "uu_dai": "Mã giảm 10% cho đơn tiếp theo"
+  },
+  "giong_dieu": "lịch sự, chân thành, ngắn gọn",
+  "rang_buoc": ["Không quá 120 từ", "Không đổ lỗi cho đơn vị vận chuyển"],
+  "dinh_dang_dau_ra": "Tiêu đề và nội dung email"
+}</pre>
+<p>Cả hai đều chạy được. Phiên bản JSON tách bạch từng yếu tố nên dễ chỉnh một mục mà không ảnh hưởng mục khác, và dễ đưa vào một quy trình tự động điền dữ liệu.</p>
+
+<h2 id="khi-nao">Khi nào nên dùng JSON prompt?</h2>
+<ul>
+<li><strong>Tạo hàng loạt:</strong> cùng một khung, thay vài giá trị (tên khách, số ngày, ưu đãi).</li>
+<li><strong>Yêu cầu nhiều thông số:</strong> tạo ảnh hoặc video với chủ thể, bối cảnh, ánh sáng, góc máy, phong cách.</li>
+<li><strong>Cần đầu ra nhất quán:</strong> để phần mềm khác đọc kết quả tiếp.</li>
+<li><strong>Làm việc nhóm:</strong> khung prompt chuẩn giúp mọi người viết đồng đều.</li>
+</ul>
+<h3>Khi nào không cần</h3>
+<p>Câu hỏi đơn giản, trò chuyện thông thường, hoặc khi bạn đang khám phá ý tưởng. Viết tự nhiên lúc đó nhanh và linh hoạt hơn.</p>
+
+<h2 id="vi-du-hinh-anh">Ví dụ JSON prompt cho tạo hình ảnh</h2>
+<pre>{
+  "chu_the": "Một chú mèo cam ngồi bên cửa sổ",
+  "boi_canh": "Quán cà phê nhỏ ở Hà Nội, buổi sáng mưa",
+  "anh_sang": "Ánh sáng dịu từ cửa sổ, tông ấm",
+  "goc_may": "Cận cảnh, ngang tầm mắt",
+  "phong_cach": "Ảnh chụp phim, hạt mịn",
+  "ti_le": "4:5",
+  "khong_bao_gom": ["chữ", "logo"]
+}</pre>
+<p>Các công cụ tạo ảnh khác nhau hiểu cấu trúc theo cách riêng. Hãy thử vài lần để biết công cụ của bạn nhạy với khóa nào.</p>
+
+<h2 id="cach-viet">Cách viết JSON prompt hiệu quả</h2>
+<ol>
+<li><strong>Bắt đầu từ mục tiêu:</strong> xác định bạn muốn kết quả gì trước khi chia khóa.</li>
+<li><strong>Đặt tên khóa dễ hiểu:</strong> "giong_dieu", "rang_buoc", không dùng ký hiệu khó đoán.</li>
+<li><strong>Giữ giá trị cụ thể:</strong> "không quá 120 từ" tốt hơn "ngắn gọn".</li>
+<li><strong>Nhóm thông tin liên quan:</strong> dùng đối tượng lồng nhau như "thong_tin".</li>
+<li><strong>Kiểm tra cú pháp:</strong> thiếu dấu phẩy hay ngoặc có thể làm AI hiểu sai.</li>
+</ol>
+
+<h2 id="loi-thuong-gap">Lỗi thường gặp</h2>
+<ul>
+<li>Nghĩ rằng JSON tự động cho kết quả tốt hơn. Chất lượng vẫn phụ thuộc vào nội dung rõ ràng.</li>
+<li>Chia quá nhỏ, tạo hàng chục khóa không cần thiết.</li>
+<li>Viết giá trị mơ hồ trong một khung rất chặt chẽ.</li>
+<li>Quên nói rõ định dạng đầu ra mong muốn.</li>
+</ul>
+<div class="callout"><p><strong>Tóm lại:</strong> JSON prompt là công cụ để tổ chức yêu cầu, không phải phép màu. Dùng khi cần cấu trúc và khả năng tái sử dụng, còn lại cứ viết tự nhiên.</p></div>
+<p>Muốn viết yêu cầu tốt hơn nói chung, đọc <a href="/9-prompt-bat-tu-duy-phan-bien/">9 prompt bật tư duy phản biện</a> và <a href="/cach-tao-ai-agent-dau-tien-tu-a-den-z/">cách tạo AI Agent đầu tiên</a>.</p>
+</article>
+<section class="faq" aria-labelledby="faq-title"><h2 id="faq-title">Câu hỏi thường gặp</h2><details><summary>JSON prompt có tốt hơn prompt thường không?</summary><p>Không phải lúc nào cũng tốt hơn. JSON giúp yêu cầu có cấu trúc, ít bỏ sót và dễ tái sử dụng, nhưng với yêu cầu đơn giản, một câu văn thường đủ và tự nhiên hơn.</p></details><details><summary>Có cần biết lập trình để viết JSON prompt không?</summary><p>Không cần, chỉ cần nắm cú pháp cơ bản: cặp khóa và giá trị, dấu ngoặc nhọn, dấu phẩy, chuỗi đặt trong dấu nháy kép. Có thể nhờ AI kiểm tra giúp cú pháp.</p></details><details><summary>JSON prompt khác yêu cầu đầu ra JSON thế nào?</summary><p>JSON prompt là cách bạn viết đầu vào theo cấu trúc JSON. Yêu cầu đầu ra JSON là bạn bảo mô hình trả lời bằng JSON. Hai việc độc lập, có thể dùng riêng hoặc kết hợp.</p></details></section>
+<aside class="related" aria-labelledby="related-title"><h2 id="related-title">Đọc tiếp</h2><div class="related-grid"><a href="/9-prompt-bat-tu-duy-phan-bien/"><small>Tutorials</small><strong>9 prompt bật tư duy phản biện khi dùng ChatGPT và AI</strong></a><a href="/huong-dan-su-dung-gamma-app-tao-bai-thuyet-trinh-tu-dong/"><small>Tutorials</small><strong>Hướng dẫn sử dụng Gamma App tạo bài thuyết trình tự động bằng AI</strong></a><a href="/prompt-phuc-che-anh-cu-bang-chatgpt/"><small>Tutorials</small><strong>Prompt phục chế ảnh cũ bằng ChatGPT: mẫu prompt và cách làm cho kết quả tự nhiên</strong></a></div></aside>
+<section class="cta" aria-labelledby="cta-title"><h2 id="cta-title">Cần triển khai AI Agent cho công việc của bạn?</h2><p>Mô tả quy trình bạn muốn tự động hóa, chúng tôi sẽ giúp chọn hướng đi phù hợp và thử nghiệm với quy mô nhỏ trước.</p><a class="btn" href="tel:0375839806">Liên hệ Mr Phương · 0375 839 806</a></section>
+</main>
+<footer class="wrap footer"><div>© 2026 aiagent.vn · Cổng kiến thức AI Agent bằng tiếng Việt</div>
+<nav aria-label="Điều hướng cuối trang"><a href="/">Trang chủ</a><a href="/bai-viet/">Tất cả bài viết</a><a href="tel:0375839806">Liên hệ Mr Phương · 0375 839 806</a></nav></footer>
+</body>
+</html>

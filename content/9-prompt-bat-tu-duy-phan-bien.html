@@ -1,0 +1,74 @@
+slug: 9-prompt-bat-tu-duy-phan-bien
+title: 9 prompt bật tư duy phản biện khi dùng ChatGPT và AI
+description: 9 mẫu prompt giúp AI phản biện ý tưởng của bạn thay vì chỉ đồng ý: tìm điểm yếu, đóng vai người phản đối, kiểm tra giả định. Có ví dụ và lưu ý để không bị AI nịnh.
+category: Tutorials
+keyword: prompt tư duy phản biện, prompt chatgpt phản biện, cách dùng ai để kiểm tra ý tưởng
+published: 2026-10-22
+read: 7
+faq: Vì sao AI hay đồng ý với mình? || Mô hình ngôn ngữ được huấn luyện để hữu ích và dễ chịu nên có xu hướng đồng tình với người dùng, nhất là khi câu hỏi hàm ý bạn đã có đáp án. Prompt phản biện yêu cầu rõ ràng điều ngược lại.
+faq: Có nên tin hoàn toàn lời phản biện của AI không? || Không. Lời phản biện của AI là gợi ý để bạn suy nghĩ tiếp, có thể sai hoặc thiếu bối cảnh. Hãy kiểm chứng những điểm quan trọng bằng nguồn đáng tin cậy.
+faq: Các prompt này dùng được với công cụ AI nào? || Dùng được với bất kỳ trợ lý AI dạng hội thoại nào như ChatGPT, Claude, Gemini. Bạn chỉ cần thay phần trong ngoặc vuông bằng nội dung của mình.
+
+<p>Trợ lý AI có xu hướng <strong>đồng ý và khen</strong> ý tưởng của bạn. Điều đó dễ chịu nhưng lại kém hữu ích khi bạn cần tìm lỗ hổng trước khi quyết định. 9 prompt dưới đây buộc AI đóng vai người phản biện, giúp bạn nhìn thấy điểm yếu sớm. Thay phần trong ngoặc vuông <code>[...]</code> bằng nội dung của bạn.</p>
+
+<h2 id="prompt-1">1. Tìm điểm yếu lớn nhất</h2>
+<pre>Hãy chỉ ra 3 điểm yếu nghiêm trọng nhất trong kế hoạch sau.
+Không khen, không nói chung chung. Với mỗi điểm yếu, nêu lý do
+và hậu quả nếu bỏ qua.
+Kế hoạch: [dán kế hoạch]</pre>
+
+<h2 id="prompt-2">2. Đóng vai người phản đối</h2>
+<pre>Hãy đóng vai một người hoài nghi thông minh và phản đối ý tưởng
+này một cách mạnh mẽ nhất có thể. Dùng những lập luận mà người
+thực sự phản đối sẽ dùng.
+Ý tưởng: [ý tưởng]</pre>
+
+<h2 id="prompt-3">3. Kiểm tra các giả định ngầm</h2>
+<pre>Liệt kê tất cả giả định ngầm mà kết luận sau đang dựa vào.
+Với từng giả định, cho biết nó có thể sai trong trường hợp nào.
+Kết luận: [kết luận]</pre>
+
+<h2 id="prompt-4">4. Phân tích trước thất bại (pre-mortem)</h2>
+<pre>Giả sử 6 tháng sau dự án này thất bại hoàn toàn. Hãy viết ra
+5 nguyên nhân có khả năng cao nhất, xếp theo xác suất, và cách
+phòng ngừa từng nguyên nhân.
+Dự án: [mô tả dự án]</pre>
+
+<h2 id="prompt-5">5. Tìm bằng chứng ngược lại</h2>
+<pre>Tôi tin rằng [nhận định]. Hãy trình bày những bằng chứng hoặc
+lập luận mạnh nhất chống lại nhận định này. Nếu bạn không chắc
+chắn về một dữ kiện, hãy nói rõ.</pre>
+
+<h2 id="prompt-6">6. So sánh hai phương án công bằng</h2>
+<pre>Hãy so sánh phương án A và B theo cách trung lập. Với mỗi
+phương án, nêu điểm mạnh, điểm yếu và điều kiện để nó là lựa
+chọn tốt hơn. Không được thiên vị phương án tôi đang nghiêng về.
+A: [...]  B: [...]</pre>
+
+<h2 id="prompt-7">7. Hỏi ngược để làm rõ</h2>
+<pre>Trước khi trả lời, hãy hỏi tôi 5 câu hỏi khó nhất mà một nhà
+đầu tư hoặc người ra quyết định sẽ hỏi về đề xuất này. Chưa đưa
+ra đánh giá cho đến khi tôi trả lời.
+Đề xuất: [...]</pre>
+
+<h2 id="prompt-8">8. Phát hiện lỗi lập luận</h2>
+<pre>Đọc đoạn lập luận sau và chỉ ra các lỗi logic, bước nhảy vô căn
+cứ, hoặc chỗ dựa vào cảm tính. Trích đúng câu có vấn đề rồi giải
+thích.
+Đoạn văn: [...]</pre>
+
+<h2 id="prompt-9">9. Tự phản biện chính câu trả lời của AI</h2>
+<pre>Hãy xem lại câu trả lời bạn vừa đưa ra. Nêu những chỗ bạn có thể
+sai, thiếu thông tin hoặc đã đơn giản hóa quá mức. Cho biết điều
+gì tôi nên tự kiểm chứng.</pre>
+
+<h2 id="meo">Mẹo để lời phản biện hữu ích hơn</h2>
+<ul>
+<li><strong>Cho đủ bối cảnh:</strong> mục tiêu, đối tượng, giới hạn thời gian và ngân sách để lời phản biện sát thực tế.</li>
+<li><strong>Đừng gài đáp án:</strong> câu hỏi kiểu "đây là ý tưởng tuyệt vời đúng không?" sẽ nhận câu trả lời đồng tình.</li>
+<li><strong>Yêu cầu xếp hạng:</strong> "3 vấn đề nghiêm trọng nhất" tốt hơn "mọi vấn đề".</li>
+<li><strong>Chạy nhiều lần, nhiều góc:</strong> hỏi lại với vai trò khác nhau (nhà đầu tư, khách hàng, đối thủ).</li>
+<li><strong>Tự quyết định:</strong> AI chỉ giúp bạn thấy nhiều khả năng hơn, quyết định vẫn là của bạn.</li>
+</ul>
+<div class="callout"><p><strong>Cẩn trọng:</strong> AI có thể bịa số liệu hoặc nguồn khi phản biện. Mọi dữ kiện quan trọng cần được kiểm tra lại từ nguồn gốc.</p></div>
+<p>Muốn viết prompt có cấu trúc chặt chẽ hơn, xem <a href="/json-prompt-la-gi/">JSON prompt là gì</a>. Muốn học AI có hệ thống, đọc <a href="/tu-hoc-ai-cho-nguoi-moi-bat-dau-tu-hoc-ai-trong-6-tuan/">lộ trình tự học AI trong 6 tuần</a>.</p>

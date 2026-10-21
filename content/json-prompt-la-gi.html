@@ -1,0 +1,71 @@
+slug: json-prompt-la-gi
+title: JSON Prompt là gì? Cách viết prompt dạng JSON và khi nào nên dùng
+description: JSON prompt là cách viết yêu cầu cho AI theo cấu trúc JSON để rõ ràng và dễ lặp lại. Giải thích khi nào hiệu quả, mẫu prompt cho văn bản và hình ảnh, lỗi thường gặp.
+category: Learn
+keyword: json prompt là gì, prompt json, viết prompt dạng json
+published: 2026-10-22
+read: 7
+faq: JSON prompt có tốt hơn prompt thường không? || Không phải lúc nào cũng tốt hơn. JSON giúp yêu cầu có cấu trúc, ít bỏ sót và dễ tái sử dụng, nhưng với yêu cầu đơn giản, một câu văn thường đủ và tự nhiên hơn.
+faq: Có cần biết lập trình để viết JSON prompt không? || Không cần, chỉ cần nắm cú pháp cơ bản: cặp khóa và giá trị, dấu ngoặc nhọn, dấu phẩy, chuỗi đặt trong dấu nháy kép. Có thể nhờ AI kiểm tra giúp cú pháp.
+faq: JSON prompt khác yêu cầu đầu ra JSON thế nào? || JSON prompt là cách bạn viết đầu vào theo cấu trúc JSON. Yêu cầu đầu ra JSON là bạn bảo mô hình trả lời bằng JSON. Hai việc độc lập, có thể dùng riêng hoặc kết hợp.
+
+<p><strong>JSON prompt</strong> là cách viết yêu cầu gửi cho AI dưới dạng cấu trúc JSON: các thông tin như vai trò, nhiệm vụ, ràng buộc, định dạng đầu ra được đặt vào các <em>khóa</em> riêng thay vì viết thành một đoạn văn dài. Mục tiêu là <strong>rõ ràng, đầy đủ và dễ lặp lại</strong>, đặc biệt hữu ích khi bạn dùng cùng một khung yêu cầu nhiều lần hoặc tạo ảnh, video với nhiều thông số.</p>
+
+<h2 id="vi-du-so-sanh">Ví dụ so sánh prompt thường và JSON prompt</h2>
+<p><strong>Prompt thường:</strong></p>
+<pre>Viết giúp tôi email ngắn gọn, lịch sự gửi khách hàng thông báo
+đơn hàng giao trễ 2 ngày, xin lỗi và tặng mã giảm 10%.</pre>
+<p><strong>JSON prompt:</strong></p>
+<pre>{
+  "vai_tro": "Nhân viên chăm sóc khách hàng của cửa hàng X",
+  "nhiem_vu": "Viết email thông báo đơn hàng giao trễ",
+  "thong_tin": {
+    "so_ngay_tre": 2,
+    "uu_dai": "Mã giảm 10% cho đơn tiếp theo"
+  },
+  "giong_dieu": "lịch sự, chân thành, ngắn gọn",
+  "rang_buoc": ["Không quá 120 từ", "Không đổ lỗi cho đơn vị vận chuyển"],
+  "dinh_dang_dau_ra": "Tiêu đề và nội dung email"
+}</pre>
+<p>Cả hai đều chạy được. Phiên bản JSON tách bạch từng yếu tố nên dễ chỉnh một mục mà không ảnh hưởng mục khác, và dễ đưa vào một quy trình tự động điền dữ liệu.</p>
+
+<h2 id="khi-nao">Khi nào nên dùng JSON prompt?</h2>
+<ul>
+<li><strong>Tạo hàng loạt:</strong> cùng một khung, thay vài giá trị (tên khách, số ngày, ưu đãi).</li>
+<li><strong>Yêu cầu nhiều thông số:</strong> tạo ảnh hoặc video với chủ thể, bối cảnh, ánh sáng, góc máy, phong cách.</li>
+<li><strong>Cần đầu ra nhất quán:</strong> để phần mềm khác đọc kết quả tiếp.</li>
+<li><strong>Làm việc nhóm:</strong> khung prompt chuẩn giúp mọi người viết đồng đều.</li>
+</ul>
+<h3>Khi nào không cần</h3>
+<p>Câu hỏi đơn giản, trò chuyện thông thường, hoặc khi bạn đang khám phá ý tưởng. Viết tự nhiên lúc đó nhanh và linh hoạt hơn.</p>
+
+<h2 id="vi-du-hinh-anh">Ví dụ JSON prompt cho tạo hình ảnh</h2>
+<pre>{
+  "chu_the": "Một chú mèo cam ngồi bên cửa sổ",
+  "boi_canh": "Quán cà phê nhỏ ở Hà Nội, buổi sáng mưa",
+  "anh_sang": "Ánh sáng dịu từ cửa sổ, tông ấm",
+  "goc_may": "Cận cảnh, ngang tầm mắt",
+  "phong_cach": "Ảnh chụp phim, hạt mịn",
+  "ti_le": "4:5",
+  "khong_bao_gom": ["chữ", "logo"]
+}</pre>
+<p>Các công cụ tạo ảnh khác nhau hiểu cấu trúc theo cách riêng. Hãy thử vài lần để biết công cụ của bạn nhạy với khóa nào.</p>
+
+<h2 id="cach-viet">Cách viết JSON prompt hiệu quả</h2>
+<ol>
+<li><strong>Bắt đầu từ mục tiêu:</strong> xác định bạn muốn kết quả gì trước khi chia khóa.</li>
+<li><strong>Đặt tên khóa dễ hiểu:</strong> "giong_dieu", "rang_buoc", không dùng ký hiệu khó đoán.</li>
+<li><strong>Giữ giá trị cụ thể:</strong> "không quá 120 từ" tốt hơn "ngắn gọn".</li>
+<li><strong>Nhóm thông tin liên quan:</strong> dùng đối tượng lồng nhau như "thong_tin".</li>
+<li><strong>Kiểm tra cú pháp:</strong> thiếu dấu phẩy hay ngoặc có thể làm AI hiểu sai.</li>
+</ol>
+
+<h2 id="loi-thuong-gap">Lỗi thường gặp</h2>
+<ul>
+<li>Nghĩ rằng JSON tự động cho kết quả tốt hơn. Chất lượng vẫn phụ thuộc vào nội dung rõ ràng.</li>
+<li>Chia quá nhỏ, tạo hàng chục khóa không cần thiết.</li>
+<li>Viết giá trị mơ hồ trong một khung rất chặt chẽ.</li>
+<li>Quên nói rõ định dạng đầu ra mong muốn.</li>
+</ul>
+<div class="callout"><p><strong>Tóm lại:</strong> JSON prompt là công cụ để tổ chức yêu cầu, không phải phép màu. Dùng khi cần cấu trúc và khả năng tái sử dụng, còn lại cứ viết tự nhiên.</p></div>
+<p>Muốn viết yêu cầu tốt hơn nói chung, đọc <a href="/9-prompt-bat-tu-duy-phan-bien/">9 prompt bật tư duy phản biện</a> và <a href="/cach-tao-ai-agent-dau-tien-tu-a-den-z/">cách tạo AI Agent đầu tiên</a>.</p>
