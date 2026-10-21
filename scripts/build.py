@@ -65,7 +65,7 @@ def head(title, description, url, og_type="website", extra=""):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101b19">
+<meta name="theme-color" content="#0f2036">
 <title>{e(title)}</title>
 <meta name="description" content="{e(description)}">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
@@ -91,7 +91,7 @@ def chrome_top():
     return f"""<body>
 <div class="topbar">Học AI Agent bằng tiếng Việt — <span>áp dụng vào công việc thật.</span></div>
 <header class="wrap nav">
-<a class="brand" href="/" aria-label="{SITE_NAME}, về trang chủ"><span class="brandmark"><span>✳</span></span><span>aiagent<span style="color:#399465">.vn</span></span></a>
+<a class="brand" href="/" aria-label="{SITE_NAME}, về trang chủ"><span class="brandmark"><img src="/assets/logo.svg" alt="" width="26" height="26"></span><span>aiagent<span style="color:#4a86e8">.vn</span></span></a>
 <nav class="navlinks" aria-label="Điều hướng chính"><a href="/">Trang chủ</a><a href="/bai-viet/">Bài viết</a><a href="/#explore">Tài nguyên</a></nav>
 </header>
 """
