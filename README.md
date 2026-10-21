@@ -37,4 +37,4 @@ Nếu muốn `www.aiagent.vn` cũng hoạt động, tạo `CNAME` tên `www` tr�
 
 ## Chỉnh sửa
 
-Sửa `dist/index.html`, commit và push lên `main`. Workflow sẽ tự xuất bản phiên bản mới. Có thể mở `dist/index.html` trực tiếp trong trình duyệt để xem trước.
+Trang chủ nằm ở `dist/index.html`. Bài viết nằm trong `content/*.html`; sau khi sửa hoặc thêm bài, chạy `python3 scripts/build.py` (sinh `dist/<slug>/`, `dist/bai-viet/`, `sitemap.xml`, `robots.txt`; thêm slug mới vào `ORDER` trong script), rồi commit và push lên `main`. Workflow sẽ tự xuất bản.

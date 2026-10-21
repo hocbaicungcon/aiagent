@@ -1,0 +1,71 @@
+slug: ai-agent-la-gi-khac-chatbot-the-nao
+title: AI Agent là gì? Khác chatbot thông thường ở đâu
+description: AI Agent (tác nhân AI) là hệ thống tự đặt kế hoạch, dùng công cụ và hành động để hoàn thành mục tiêu. Giải thích dễ hiểu, kèm ví dụ và bảng so sánh với chatbot.
+category: Learn
+keyword: ai agent là gì, ai agent khác chatbot
+published: 2026-10-22
+read: 8
+faq: AI Agent tiếng Việt gọi là gì? || Thường gọi là "tác nhân AI" hoặc "trợ lý AI tự chủ". Trong thực tế người Việt vẫn dùng nguyên từ AI Agent.
+faq: AI Agent có phải là ChatGPT không? || Không hoàn toàn. ChatGPT là một ứng dụng trò chuyện xây trên mô hình ngôn ngữ lớn. Một AI Agent dùng mô hình ngôn ngữ làm "bộ não" nhưng bổ sung khả năng lập kế hoạch, gọi công cụ và thực hiện hành động. Một số sản phẩm như ChatGPT cũng có chế độ agent.
+faq: Muốn làm AI Agent có cần biết lập trình không? || Không bắt buộc. Có các nền tảng kéo thả cho phép dựng agent đơn giản mà không cần code. Tuy nhiên hiểu logic quy trình và biết đọc dữ liệu vẫn rất cần thiết.
+faq: AI Agent có thể sai không? || Có. Agent dựa trên mô hình ngôn ngữ nên có thể hiểu sai yêu cầu hoặc thực hiện sai bước. Vì vậy các thao tác quan trọng như gửi tiền, xóa dữ liệu hay gửi email cho khách cần có người duyệt.
+
+<p><strong>AI Agent (tác nhân AI)</strong> là một hệ thống dùng mô hình ngôn ngữ lớn làm bộ não để <strong>tự đặt kế hoạch, sử dụng công cụ và thực hiện hành động</strong> nhằm đạt một mục tiêu do người dùng giao. Khác với chatbot chỉ trả lời câu hỏi, agent có thể tự mở tệp, tìm thông tin, gọi phần mềm khác và lặp lại các bước cho đến khi xong việc.</p>
+
+<h2 id="dinh-nghia">Định nghĩa ngắn gọn về AI Agent</h2>
+<p>Hãy hình dung bạn nhờ một nhân viên mới: "Tổng hợp các email khiếu nại tuần này và báo cho tôi mức độ khẩn cấp của từng cái". Nhân viên đó sẽ mở hộp thư, đọc từng email, phân loại, rồi viết báo cáo. Họ tự quyết định thứ tự làm việc và tự tra cứu khi chưa rõ.</p>
+<p>AI Agent làm việc theo tinh thần tương tự. Bạn đưa ra <em>mục tiêu</em>, không phải từng bước. Agent tự chia nhỏ mục tiêu, chọn công cụ phù hợp, thực hiện, kiểm tra kết quả và điều chỉnh.</p>
+
+<h2 id="vong-lap">Một AI Agent hoạt động như thế nào?</h2>
+<p>Hầu hết agent chạy theo một vòng lặp gồm bốn bước:</p>
+<ol>
+<li><strong>Quan sát:</strong> nhận mục tiêu và ngữ cảnh hiện tại (yêu cầu của bạn, dữ liệu, kết quả bước trước).</li>
+<li><strong>Lập kế hoạch:</strong> mô hình ngôn ngữ suy luận xem bước tiếp theo nên là gì.</li>
+<li><strong>Hành động:</strong> gọi một công cụ, ví dụ tìm kiếm web, đọc tệp, truy vấn cơ sở dữ liệu, gửi yêu cầu API.</li>
+<li><strong>Đánh giá:</strong> xem kết quả có đạt mục tiêu chưa. Nếu chưa, quay lại bước 1 với thông tin mới.</li>
+</ol>
+<p>Vòng lặp dừng khi agent cho rằng đã xong, hoặc khi chạm giới hạn mà người xây dựng đặt ra (số bước, thời gian, chi phí).</p>
+
+<h2 id="thanh-phan">Bốn thành phần chính của một AI Agent</h2>
+<table>
+<thead><tr><th>Thành phần</th><th>Vai trò</th><th>Ví dụ</th></tr></thead>
+<tbody>
+<tr><td>Mô hình ngôn ngữ</td><td>Suy luận, hiểu yêu cầu, quyết định bước tiếp theo</td><td>Claude, GPT, Gemini</td></tr>
+<tr><td>Công cụ</td><td>Cho agent khả năng tác động ra bên ngoài</td><td>Tìm kiếm web, đọc Google Sheets, gửi email</td></tr>
+<tr><td>Bộ nhớ</td><td>Lưu ngữ cảnh ngắn hạn và kiến thức dài hạn</td><td>Lịch sử hội thoại, tài liệu nội bộ</td></tr>
+<tr><td>Quy tắc và giới hạn</td><td>Giữ agent làm đúng phạm vi</td><td>"Không được xóa dữ liệu", "hỏi lại khi dưới 80% chắc chắn"</td></tr>
+</tbody>
+</table>
+
+<h2 id="khac-chatbot">AI Agent khác chatbot ở đâu?</h2>
+<p>Ranh giới không phải lúc nào cũng rõ, vì nhiều chatbot hiện đại đã có thêm tính năng của agent. Nhưng về bản chất có thể so sánh như sau:</p>
+<table>
+<thead><tr><th>Tiêu chí</th><th>Chatbot truyền thống</th><th>AI Agent</th></tr></thead>
+<tbody>
+<tr><td>Cách làm việc</td><td>Hỏi một câu, trả lời một câu</td><td>Nhận mục tiêu, tự thực hiện nhiều bước</td></tr>
+<tr><td>Công cụ bên ngoài</td><td>Thường không có hoặc rất hạn chế</td><td>Gọi được nhiều công cụ và hệ thống</td></tr>
+<tr><td>Tính chủ động</td><td>Chờ người dùng hỏi tiếp</td><td>Tự quyết định bước kế tiếp</td></tr>
+<tr><td>Kết quả</td><td>Văn bản trả lời</td><td>Công việc hoàn thành (tệp, email, bản ghi được cập nhật)</td></tr>
+<tr><td>Rủi ro</td><td>Trả lời sai thông tin</td><td>Trả lời sai và làm sai hành động</td></tr>
+</tbody>
+</table>
+<div class="callout"><p><strong>Cách nhớ nhanh:</strong> chatbot <em>nói</em>, agent <em>làm</em>. Chính vì agent có thể làm, bạn cần thiết kế kiểm soát cẩn thận hơn nhiều.</p></div>
+
+<h2 id="vi-du">Ví dụ AI Agent trong công việc hằng ngày</h2>
+<ul>
+<li><strong>Chăm sóc khách hàng:</strong> đọc yêu cầu hỗ trợ, tra cứu đơn hàng trong hệ thống, soạn phản hồi nháp để nhân viên duyệt.</li>
+<li><strong>Nghiên cứu thị trường:</strong> tìm nhiều nguồn, trích xuất số liệu, đối chiếu và viết bản tóm tắt có trích dẫn.</li>
+<li><strong>Vận hành nội bộ:</strong> nhận hóa đơn qua email, đọc nội dung, nhập vào bảng tính kế toán và đánh dấu mục bất thường.</li>
+<li><strong>Lập trình:</strong> đọc mã nguồn, chạy kiểm thử, sửa lỗi và đề xuất thay đổi để lập trình viên xem lại.</li>
+</ul>
+
+<h2 id="gioi-han">Giới hạn cần biết trước khi dùng</h2>
+<ul>
+<li><strong>Có thể sai:</strong> mô hình ngôn ngữ không đảm bảo đúng tuyệt đối. Kết quả quan trọng cần được kiểm tra.</li>
+<li><strong>Tốn chi phí:</strong> mỗi bước suy luận và gọi công cụ đều tính phí hoặc tốn tài nguyên. Agent chạy nhiều vòng có thể tốn hơn dự kiến.</li>
+<li><strong>Khó dự đoán:</strong> cùng một yêu cầu có thể cho đường đi khác nhau. Cần ghi nhật ký để truy vết.</li>
+<li><strong>Bảo mật:</strong> agent đọc nội dung từ bên ngoài (email, trang web) có thể bị "dắt mũi" bởi chỉ dẫn độc hại ẩn trong đó. Chỉ cấp cho agent quyền tối thiểu cần thiết.</li>
+</ul>
+
+<h2 id="bat-dau">Nên bắt đầu từ đâu?</h2>
+<p>Đừng bắt đầu bằng một hệ thống phức tạp. Chọn <strong>một tác vụ nhỏ, lặp lại, có kết quả kiểm tra được</strong> rồi để agent làm thử với dữ liệu mẫu. Khi đã tin cậy, hãy mở rộng dần. Bạn có thể đọc tiếp <a href="/cach-tao-ai-agent-dau-tien-tu-a-den-z/">cách tạo AI Agent đầu tiên từ A đến Z</a> hoặc <a href="/khi-nao-nen-dung-ai-agent-cho-doanh-nghiep/">khi nào nên dùng AI Agent cho doanh nghiệp</a> để xác định việc nào đáng giao cho agent.</p>
