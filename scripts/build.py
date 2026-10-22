@@ -9,7 +9,11 @@ Thân bài dùng <h2 id="..."> để tự tạo mục lục.
 import html
 import json
 import re
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from diagrams import FIGS  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
@@ -46,8 +50,16 @@ def parse(path):
             meta["faq"].append((q.strip(), a.strip()))
         else:
             meta[key] = value
-    meta["body"] = body.strip()
+    meta["body"] = render_figs(body.strip())
     return meta
+
+
+def render_figs(body):
+    def sub(m):
+        name, _, cap = m.group(1).partition("|")
+        return f'<figure class="figure">{FIGS[name.strip()]()}<figcaption>{e(cap.strip())}</figcaption></figure>'
+
+    return re.sub(r"\{\{fig:(.*?)\}\}", sub, body)
 
 
 def toc(body):

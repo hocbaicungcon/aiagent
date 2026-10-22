@@ -15,6 +15,8 @@ faq: Doanh nghiệp nhỏ có cần MCP không? || Không bắt buộc. MCP hữ
 <h2 id="van-de">MCP giải quyết vấn đề gì?</h2>
 <p>Một mô hình ngôn ngữ tự nó chỉ biết những gì nó đã học. Muốn nó đọc được lịch họp, tra được đơn hàng hay cập nhật được bảng tính, bạn phải nối nó với các hệ thống đó. Trước đây mỗi lần nối là một lần viết mã riêng: M ứng dụng AI nhân với N công cụ thành M×N tích hợp. MCP biến bài toán thành M+N: mỗi công cụ viết một máy chủ MCP, mỗi ứng dụng AI viết một ứng dụng khách MCP, rồi ghép với nhau.</p>
 
+{{fig:mcp-mxn|Chuẩn chung biến số kết nối từ M×N thành M+N.}}
+
 <h2 id="kien-truc">MCP hoạt động như thế nào?</h2>
 <table>
 <thead><tr><th>Thành phần</th><th>Vai trò</th><th>Ví dụ</th></tr></thead>
@@ -31,6 +33,8 @@ faq: Doanh nghiệp nhỏ có cần MCP không? || Không bắt buộc. MCP hữ
 <li><strong>Mẫu chỉ dẫn (prompts):</strong> các mẫu tương tác dựng sẵn mà người dùng chọn.</li>
 </ul>
 <p>Khi kết nối, ứng dụng khách hỏi máy chủ "bạn có những công cụ gì?" và nhận danh sách kèm mô tả. Mô hình đọc mô tả đó để quyết định lúc nào gọi công cụ nào.</p>
+
+{{fig:mcp-kien-truc|Ứng dụng AI nói chuyện với công cụ và dữ liệu thông qua máy chủ MCP.}}
 
 <h2 id="loi-ich">Lợi ích cho doanh nghiệp</h2>
 <ul>
