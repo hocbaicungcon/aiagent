@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f2036">
+<title>Prompt Engineering với Claude từ A đến Z: các kỹ thuật viết prompt hiệu quả | AI Agent Việt Nam</title>
+<meta name="description" content="Tổng hợp các kỹ thuật viết prompt hiệu quả khi dùng Claude và các mô hình ngôn ngữ khác: viết rõ ràng, đưa ví dụ, dùng thẻ XML, cho mô hình thời gian suy nghĩ, gán vai trò, kiểm thử và cải thiện.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://aiagent.vn/prompt-engineering-claude-a-z-huong-dan-toan-dien-tu-anthropic/">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="AI Agent Việt Nam">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Prompt Engineering với Claude từ A đến Z: các kỹ thuật viết prompt hiệu quả | AI Agent Việt Nam">
+<meta property="og:description" content="Tổng hợp các kỹ thuật viết prompt hiệu quả khi dùng Claude và các mô hình ngôn ngữ khác: viết rõ ràng, đưa ví dụ, dùng thẻ XML, cho mô hình thời gian suy nghĩ, gán vai trò, kiểm thử và cải thiện.">
+<meta property="og:url" content="https://aiagent.vn/prompt-engineering-claude-a-z-huong-dan-toan-dien-tu-anthropic/">
+<meta property="og:image" content="https://aiagent.vn/og/prompt-engineering-claude-a-z-huong-dan-toan-dien-tu-anthropic.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Prompt Engineering với Claude từ A đến Z: các kỹ thuật viết prompt hiệu quả | AI Agent Việt Nam">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://aiagent.vn/og/prompt-engineering-claude-a-z-huong-dan-toan-dien-tu-anthropic.png">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/article.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Prompt Engineering với Claude từ A đến Z: các kỹ thuật viết prompt hiệu quả", "description": "Tổng hợp các kỹ thuật viết prompt hiệu quả khi dùng Claude và các mô hình ngôn ngữ khác: viết rõ ràng, đưa ví dụ, dùng thẻ XML, cho mô hình thời gian suy nghĩ, gán vai trò, kiểm thử và cải thiện.", "inLanguage": "vi-VN", "datePublished": "2026-10-22", "dateModified": "2026-10-22", "mainEntityOfPage": "https://aiagent.vn/prompt-engineering-claude-a-z-huong-dan-toan-dien-tu-anthropic/", "image": "https://aiagent.vn/og/prompt-engineering-claude-a-z-huong-dan-toan-dien-tu-anthropic.png", "keywords": "prompt engineering claude, cách viết prompt cho claude, kỹ thuật viết prompt", "author": {"@type": "Organization", "name": "AI Agent Việt Nam", "url": "https://aiagent.vn"}, "publisher": {"@type": "Organization", "name": "AI Agent Việt Nam", "url": "https://aiagent.vn"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://aiagent.vn/"}, {"@type": "ListItem", "position": 2, "name": "Bài viết", "item": "https://aiagent.vn/bai-viet/"}, {"@type": "ListItem", "position": 3, "name": "Prompt Engineering với Claude từ A đến Z: các kỹ thuật viết prompt hiệu quả", "item": "https://aiagent.vn/prompt-engineering-claude-a-z-huong-dan-toan-dien-tu-anthropic/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Prompt engineering là gì?", "acceptedAnswer": {"@type": "Answer", "text": "Là quá trình thiết kế và cải tiến yêu cầu gửi cho mô hình AI để nhận được kết quả chính xác, ổn định và đúng định dạng. Nó gồm viết chỉ dẫn, đưa ví dụ, cấu trúc đầu vào và thử nghiệm có hệ thống."}}, {"@type": "Question", "name": "Kỹ thuật nào hiệu quả nhất?", "acceptedAnswer": {"@type": "Answer", "text": "Hiệu quả nhất thường là viết chỉ dẫn rõ ràng và cụ thể, đưa vài ví dụ mẫu, và tách rõ phần chỉ dẫn với phần dữ liệu. Những thứ này đơn giản nhưng giải quyết đa số vấn đề."}}, {"@type": "Question", "name": "Các kỹ thuật này có dùng được cho ChatGPT hay Gemini không?", "acceptedAnswer": {"@type": "Answer", "text": "Phần lớn dùng được vì chúng dựa trên nguyên tắc chung của mô hình ngôn ngữ. Chi tiết cách mỗi mô hình phản ứng có thể khác nhau nên cần thử nghiệm."}}, {"@type": "Question", "name": "Có cần cập nhật cách viết prompt khi mô hình mới ra không?", "acceptedAnswer": {"@type": "Answer", "text": "Nên thử lại. Mô hình mới thường hiểu chỉ dẫn tốt hơn nên những mẹo cũ như nhắc đi nhắc lại hay viết quá dài có thể không còn cần thiết, thậm chí gây phản tác dụng."}}]}</script>
+</head>
+<body>
+<div class="topbar">Học AI Agent bằng tiếng Việt — <span>áp dụng vào công việc thật.</span></div>
+<header class="wrap nav">
+<a class="brand" href="/" aria-label="AI Agent Việt Nam, về trang chủ"><span class="brandmark"><img src="/assets/logo.svg" alt="" width="38" height="38"></span><span>aiagent<span style="color:#4a86e8">.vn</span></span></a>
+<nav class="navlinks" aria-label="Điều hướng chính"><a href="/">Trang chủ</a><a href="/bai-viet/">Bài viết</a><a href="/#explore">Tài nguyên</a></nav>
+</header>
+<main class="narrow">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Trang chủ</a> › <a href="/bai-viet/">Bài viết</a> › Learn</nav>
+<header class="article-head"><span class="kicker">Learn</span><h1>Prompt Engineering với Claude từ A đến Z: các kỹ thuật viết prompt hiệu quả</h1>
+<p class="lede">Tổng hợp các kỹ thuật viết prompt hiệu quả khi dùng Claude và các mô hình ngôn ngữ khác: viết rõ ràng, đưa ví dụ, dùng thẻ XML, cho mô hình thời gian suy nghĩ, gán vai trò, kiểm thử và cải thiện.</p>
+<div class="meta"><span>Đăng ngày <time datetime="2026-10-22">22/10/2026</time></span><span>Cập nhật <time datetime="2026-10-22">22/10/2026</time></span><span>9 phút đọc</span></div></header>
+<nav class="toc" aria-label="Mục lục"><strong>Nội dung bài viết</strong><ol><li><a href="#truoc-khi-viet">Trước khi viết: xác định tiêu chí thành công</a></li><li><a href="#ro-rang">1. Viết rõ ràng và cụ thể</a></li><li><a href="#boi-canh">2. Cung cấp bối cảnh và lý do</a></li><li><a href="#vi-du">3. Đưa ví dụ mẫu</a></li><li><a href="#the-xml">4. Dùng thẻ để tách chỉ dẫn và dữ liệu</a></li><li><a href="#vai-tro">5. Gán vai trò khi cần</a></li><li><a href="#suy-nghi">6. Cho mô hình không gian để suy nghĩ</a></li><li><a href="#dinh-dang">7. Quy định định dạng đầu ra</a></li><li><a href="#tai-lieu-dai">8. Xử lý tài liệu dài</a></li><li><a href="#giam-bia">9. Giảm "ảo giác"</a></li><li><a href="#thu-nghiem">10. Kiểm thử và cải thiện có hệ thống</a></li><li><a href="#prompt-he-thong">Prompt hệ thống và agent</a></li></ol></nav>
+<article class="prose">
+<p><strong>Prompt engineering</strong> là việc thiết kế yêu cầu gửi cho mô hình AI sao cho kết quả <strong>đúng, ổn định và đúng định dạng bạn cần</strong>. Bài này tổng hợp các kỹ thuật thực dụng khi làm việc với Claude, và hầu hết cũng áp dụng được cho các mô hình ngôn ngữ khác. Đây là tổng hợp nguyên tắc chung, không thay thế tài liệu chính thức của Anthropic, hãy đối chiếu với tài liệu đó vì khuyến nghị có thể được cập nhật theo từng đời mô hình.</p>
+
+<h2 id="truoc-khi-viet">Trước khi viết: xác định tiêu chí thành công</h2>
+<p>Hãy trả lời ba câu hỏi trước khi viết prompt đầu tiên:</p>
+<ol>
+<li>Kết quả tốt trông như thế nào? (định dạng, độ dài, giọng điệu)</li>
+<li>Làm sao đo được? (bộ ví dụ có đáp án, danh sách kiểm tra)</li>
+<li>Trường hợp nào là khó? (dữ liệu thiếu, mơ hồ, đầu vào lạ)</li>
+</ol>
+<p>Không có tiêu chí thì mọi lần chỉnh prompt chỉ là cảm giác.</p>
+
+<h2 id="ro-rang">1. Viết rõ ràng và cụ thể</h2>
+<p>Hãy hình dung bạn giao việc cho một đồng nghiệp thông minh nhưng chưa biết gì về bối cảnh của bạn. Nói rõ:</p>
+<ul>
+<li>Mục đích của kết quả và ai sẽ dùng nó.</li>
+<li>Những gì cần có và những gì không được có.</li>
+<li>Định dạng đầu ra mong muốn.</li>
+</ul>
+<div class="table-wrap"><table>
+<thead><tr><th>Mơ hồ</th><th>Rõ ràng</th></tr></thead>
+<tbody>
+<tr><td>"Tóm tắt báo cáo này"</td><td>"Tóm tắt báo cáo này trong 5 gạch đầu dòng cho giám đốc, nêu số liệu doanh thu và 2 rủi ro chính"</td></tr>
+<tr><td>"Viết email cho khách"</td><td>"Viết email 100 từ, giọng thân thiện, báo đơn trễ 2 ngày và đề nghị mã giảm 10%"</td></tr>
+</tbody>
+</table></div>
+
+<h2 id="boi-canh">2. Cung cấp bối cảnh và lý do</h2>
+<p>Giải thích <em>vì sao</em> bạn cần điều đó giúp mô hình đưa ra lựa chọn phù hợp. Ví dụ "Đừng dùng thuật ngữ kỹ thuật vì người đọc là khách hàng lớn tuổi" hiệu quả hơn chỉ nói "viết đơn giản".</p>
+
+<h2 id="vi-du">3. Đưa ví dụ mẫu</h2>
+<p>Một đến ba ví dụ thường cải thiện rõ rệt độ ổn định, nhất là khi cần định dạng hoặc phong cách đặc thù. Chọn ví dụ đa dạng và đúng với kết quả bạn muốn, vì mô hình bắt chước ví dụ rất sát.</p>
+<pre>Phân loại phản hồi khách hàng thành: tích cực, tiêu cực, trung lập.
+
+Ví dụ 1: "Giao hàng nhanh, đóng gói đẹp" -> tích cực
+Ví dụ 2: "Chờ 10 ngày mới nhận được" -> tiêu cực
+
+Phản hồi cần phân loại: "Sản phẩm đúng mô tả"</pre>
+
+<h2 id="the-xml">4. Dùng thẻ để tách chỉ dẫn và dữ liệu</h2>
+<p>Khi prompt có nhiều phần (chỉ dẫn, tài liệu, ví dụ), hãy bọc từng phần trong thẻ rõ ràng để mô hình không nhầm lẫn:</p>
+<pre>&lt;tai_lieu&gt;
+[dán nội dung]
+&lt;/tai_lieu&gt;
+
+&lt;yeu_cau&gt;
+Tóm tắt tài liệu trên trong 3 ý, trích nguyên văn một câu quan trọng.
+&lt;/yeu_cau&gt;</pre>
+<p>Cách này đặc biệt hữu ích với tài liệu dài và giúp phòng tránh việc nội dung dữ liệu bị hiểu như chỉ dẫn.</p>
+
+<h2 id="vai-tro">5. Gán vai trò khi cần</h2>
+<p>Một câu như "Bạn là biên tập viên pháp lý giàu kinh nghiệm" định hướng giọng điệu và mức độ chuyên sâu. Hãy dùng vai trò để <em>bổ sung bối cảnh</em>, đừng để nó thay cho chỉ dẫn cụ thể.</p>
+
+<h2 id="suy-nghi">6. Cho mô hình không gian để suy nghĩ</h2>
+<p>Với bài toán nhiều bước (phân tích, tính toán, so sánh), yêu cầu mô hình lập luận từng bước trước khi kết luận thường cho kết quả tốt hơn. Bạn có thể yêu cầu phần suy luận và phần trả lời cuối nằm trong hai thẻ riêng để dễ lấy đúng phần cần dùng. Nhiều mô hình mới có chế độ suy luận mở rộng sẵn, hãy kiểm tra tài liệu của mô hình bạn dùng.</p>
+
+<h2 id="dinh-dang">7. Quy định định dạng đầu ra</h2>
+<ul>
+<li>Nêu rõ cấu trúc: danh sách, bảng, JSON với các khóa cụ thể.</li>
+<li>Nói điều <strong>nên làm</strong> thay vì chỉ cấm: "viết thành đoạn văn liền mạch" hiệu quả hơn "đừng dùng gạch đầu dòng".</li>
+<li>Khi cần đọc kết quả bằng phần mềm, tham khảo cách ép đầu ra có cấu trúc, xem thêm <a href="/json-prompt-la-gi/">JSON prompt là gì</a>.</li>
+</ul>
+
+<h2 id="tai-lieu-dai">8. Xử lý tài liệu dài</h2>
+<ul>
+<li>Đặt tài liệu dài ở đầu, câu hỏi ở cuối prompt.</li>
+<li>Yêu cầu trích dẫn đoạn liên quan trước khi trả lời để giảm bịa đặt.</li>
+<li>Nếu có nhiều tài liệu, đánh nhãn từng tài liệu bằng thẻ có tên và nguồn.</li>
+</ul>
+
+<h2 id="giam-bia">9. Giảm "ảo giác"</h2>
+<ul>
+<li>Cho phép mô hình nói "tôi không biết" hoặc "tài liệu không nêu".</li>
+<li>Yêu cầu bám sát tài liệu đã cung cấp và trích dẫn.</li>
+<li>Kiểm tra lại các dữ kiện quan trọng bằng nguồn gốc.</li>
+</ul>
+
+<h2 id="thu-nghiem">10. Kiểm thử và cải thiện có hệ thống</h2>
+<figure class="figure"><svg class="dg" viewBox="0 0 560 240" role="img" aria-label="Vòng cải thiện prompt: viết, chạy bộ kiểm thử, xem ca sai, chỉnh một yếu tố" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah-vong-cai-thien" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" class="ahead"/></marker></defs><rect x="30" y="20" width="230" height="72" rx="14" class="box a"/><text x="145.0" y="51.0" class="t a" text-anchor="middle">1. Viết prompt</text><text x="145.0" y="68.0" class="s a" text-anchor="middle">theo cấu trúc rõ ràng</text><rect x="300" y="20" width="230" height="72" rx="14" class="box "/><text x="415.0" y="51.0" class="t " text-anchor="middle">2. Chạy bộ kiểm thử</text><text x="415.0" y="68.0" class="s " text-anchor="middle">20 đến 50 ví dụ có đáp án</text><rect x="300" y="150" width="230" height="72" rx="14" class="box "/><text x="415.0" y="181.0" class="t " text-anchor="middle">3. Xem các ca sai</text><text x="415.0" y="198.0" class="s " text-anchor="middle">thiếu chỉ dẫn hay ví dụ?</text><rect x="30" y="150" width="230" height="72" rx="14" class="box "/><text x="145.0" y="181.0" class="t " text-anchor="middle">4. Chỉnh một yếu tố</text><text x="145.0" y="198.0" class="s " text-anchor="middle">rồi đo lại</text><path d="M262 56 L298 56" class="arr" marker-end="url(#ah-vong-cai-thien)"/><path d="M415 94 L415 148" class="arr" marker-end="url(#ah-vong-cai-thien)"/><path d="M298 186 L262 186" class="arr" marker-end="url(#ah-vong-cai-thien)"/><path d="M145 148 L145 94" class="arr" marker-end="url(#ah-vong-cai-thien)"/><text x="280" y="126" class="s" text-anchor="middle">mỗi lần chỉ đổi một thứ</text></svg><figcaption>Cải thiện prompt là vòng đo và chỉnh, mỗi lần chỉ đổi một yếu tố để biết thay đổi nào có ích.</figcaption></figure>
+<ol>
+<li>Tạo bộ 20 đến 50 ví dụ đại diện, kèm đáp án đúng.</li>
+<li>Chạy prompt hiện tại, ghi tỷ lệ đúng.</li>
+<li>Thay đổi <strong>một yếu tố</strong> mỗi lần, chạy lại và so sánh.</li>
+<li>Xem kỹ các trường hợp sai để biết thiếu chỉ dẫn, thiếu ví dụ hay do dữ liệu.</li>
+<li>Lưu phiên bản prompt cùng kết quả đo.</li>
+</ol>
+
+<h2 id="prompt-he-thong">Prompt hệ thống và agent</h2>
+<p>Khi dùng cho agent, prompt hệ thống là "bản mô tả công việc" cố định: vai trò, mục tiêu, quy tắc, công cụ được dùng và việc không được làm. Xem mẫu ở <a href="/cach-tao-ai-agent-dau-tien-tu-a-den-z/">cách tạo AI Agent đầu tiên</a>.</p>
+<div class="callout"><p><strong>Tóm tắt:</strong> rõ ràng, có bối cảnh, có ví dụ, tách dữ liệu khỏi chỉ dẫn, rồi đo và cải tiến. Hầu hết cải thiện đến từ việc viết rõ hơn, không phải từ mẹo phức tạp.</p></div>
+<p>Muốn luyện cách khiến AI phản biện bạn, xem <a href="/9-prompt-bat-tu-duy-phan-bien/">9 prompt bật tư duy phản biện</a>.</p>
+</article>
+<section class="faq" aria-labelledby="faq-title"><h2 id="faq-title">Câu hỏi thường gặp</h2><details><summary>Prompt engineering là gì?</summary><p>Là quá trình thiết kế và cải tiến yêu cầu gửi cho mô hình AI để nhận được kết quả chính xác, ổn định và đúng định dạng. Nó gồm viết chỉ dẫn, đưa ví dụ, cấu trúc đầu vào và thử nghiệm có hệ thống.</p></details><details><summary>Kỹ thuật nào hiệu quả nhất?</summary><p>Hiệu quả nhất thường là viết chỉ dẫn rõ ràng và cụ thể, đưa vài ví dụ mẫu, và tách rõ phần chỉ dẫn với phần dữ liệu. Những thứ này đơn giản nhưng giải quyết đa số vấn đề.</p></details><details><summary>Các kỹ thuật này có dùng được cho ChatGPT hay Gemini không?</summary><p>Phần lớn dùng được vì chúng dựa trên nguyên tắc chung của mô hình ngôn ngữ. Chi tiết cách mỗi mô hình phản ứng có thể khác nhau nên cần thử nghiệm.</p></details><details><summary>Có cần cập nhật cách viết prompt khi mô hình mới ra không?</summary><p>Nên thử lại. Mô hình mới thường hiểu chỉ dẫn tốt hơn nên những mẹo cũ như nhắc đi nhắc lại hay viết quá dài có thể không còn cần thiết, thậm chí gây phản tác dụng.</p></details></section>
+<aside class="related" aria-labelledby="related-title"><h2 id="related-title">Đọc tiếp</h2><div class="related-grid"><a href="/11-ung-dung-ai-lam-powerpoint-tu-dong/"><small>Tools</small><strong>11 ứng dụng AI làm PowerPoint tự động: so sánh và cách chọn</strong></a><a href="/mau-prompt-cac-loai-chuyen-dong-camera-camera-movement/"><small>Tutorials</small><strong>Mẫu prompt các loại chuyển động camera (camera movement) cho AI tạo video</strong></a><a href="/50-phong-cach-tao-hinh-voi-chatgpt-plus/"><small>Tutorials</small><strong>50 phong cách tạo hình với ChatGPT: danh sách phong cách và cách viết prompt</strong></a></div></aside>
+<section class="cta" aria-labelledby="cta-title"><h2 id="cta-title">Cần triển khai AI Agent cho công việc của bạn?</h2><p>Mô tả quy trình bạn muốn tự động hóa, chúng tôi sẽ giúp chọn hướng đi phù hợp và thử nghiệm với quy mô nhỏ trước.</p><a class="btn" href="tel:0375839806">Liên hệ Mr Phương · 0375 839 806</a></section>
+</main>
+<footer class="wrap footer"><div>© 2026 aiagent.vn · Cổng kiến thức AI Agent bằng tiếng Việt</div>
+<nav aria-label="Điều hướng cuối trang"><a href="/">Trang chủ</a><a href="/bai-viet/">Tất cả bài viết</a><a href="tel:0375839806">Liên hệ Mr Phương · 0375 839 806</a></nav></footer>
+</body>
+</html>

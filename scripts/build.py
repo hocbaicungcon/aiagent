@@ -34,6 +34,12 @@ ORDER = [
     "huong-dan-su-dung-gamma-app-tao-bai-thuyet-trinh-tu-dong",
     "prompt-phuc-che-anh-cu-bang-chatgpt",
     "tu-hoc-ai-cho-nguoi-moi-bat-dau-tu-hoc-ai-trong-6-tuan",
+    "so-sanh-chatgpt-plus-va-chatgpt-api",
+    "prompt-engineering-claude-a-z-huong-dan-toan-dien-tu-anthropic",
+    "11-ung-dung-ai-lam-powerpoint-tu-dong",
+    "mau-prompt-cac-loai-chuyen-dong-camera-camera-movement",
+    "50-phong-cach-tao-hinh-voi-chatgpt-plus",
+    "ai-text-to-cad-cong-cu-ai-tao-cad-tu-van-ban",
 ]
 
 e = html.escape

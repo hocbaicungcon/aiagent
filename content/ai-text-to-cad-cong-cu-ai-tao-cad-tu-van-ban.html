@@ -1,0 +1,77 @@
+slug: ai-text-to-cad-cong-cu-ai-tao-cad-tu-van-ban
+title: AI Text-to-CAD là gì? Cách dùng AI tạo mô hình CAD từ mô tả bằng văn bản
+description: Text-to-CAD là dùng AI biến mô tả bằng chữ thành mô hình 3D có thể chỉnh sửa. Giải thích các hướng tiếp cận, khác biệt với AI tạo lưới 3D, quy trình làm việc, giới hạn và cách viết mô tả cho kết quả chính xác.
+category: Tools
+keyword: ai text to cad, ai tạo cad từ văn bản, tạo mô hình 3d bằng ai
+published: 2026-10-22
+read: 8
+faq: Text-to-CAD khác text-to-3D thế nào? || Text-to-3D thường tạo lưới đa giác (mesh) để xem hoặc làm đồ họa, thiếu kích thước chính xác. Text-to-CAD hướng tới mô hình có kích thước, ràng buộc và lịch sử chỉnh sửa như trong phần mềm CAD, phù hợp thiết kế và sản xuất.
+faq: AI có thay thế kỹ sư thiết kế CAD không? || Chưa. AI giúp dựng nhanh bản nháp và các chi tiết đơn giản, nhưng việc kiểm tra kích thước, dung sai, độ bền và khả năng sản xuất vẫn cần con người có chuyên môn.
+faq: Mô hình do AI tạo có in 3D được ngay không? || Có thể, nếu xuất ra tệp phù hợp như STL và hình học hợp lệ. Hãy luôn kiểm tra kích thước, thành mỏng và khả năng in trong phần mềm cắt lớp trước khi in.
+faq: Nên bắt đầu với vật thể nào? || Bắt đầu với chi tiết đơn giản có kích thước rõ ràng như giá đỡ, hộp có nắp, tay cầm hoặc chi tiết nối. Tăng độ phức tạp dần khi bạn nắm được cách mô tả.
+
+<p><strong>Text-to-CAD</strong> là cách dùng AI để biến một <strong>mô tả bằng chữ thành mô hình 3D có kích thước và có thể chỉnh sửa</strong>, thay vì phải dựng từng nét phác và lệnh trong phần mềm CAD. Lĩnh vực này đang phát triển nhanh, nên bài này tập trung vào khái niệm, các hướng tiếp cận và cách làm việc hiệu quả, không so sánh từng sản phẩm cụ thể vì tính năng thay đổi thường xuyên.</p>
+
+<h2 id="khac-biet">CAD và lưới 3D khác nhau thế nào?</h2>
+<table>
+<thead><tr><th>Tiêu chí</th><th>Mô hình CAD</th><th>Lưới 3D (mesh)</th></tr></thead>
+<tbody>
+<tr><td>Cấu tạo</td><td>Khối đặc, bề mặt toán học, thường kèm tham số</td><td>Tập hợp các mặt tam giác</td></tr>
+<tr><td>Kích thước</td><td>Chính xác, đo và sửa được từng thông số</td><td>Chỉ là tỷ lệ tương đối, khó sửa chính xác</td></tr>
+<tr><td>Chỉnh sửa</td><td>Dễ: đổi đường kính lỗ, độ dày, khoảng cách</td><td>Khó, thường phải điêu khắc thủ công</td></tr>
+<tr><td>Dùng cho</td><td>Thiết kế sản phẩm, cơ khí, gia công, in 3D chức năng</td><td>Đồ họa, trò chơi, mô hình trang trí</td></tr>
+</tbody>
+</table>
+<p>Nếu bạn cần chi tiết lắp ráp vừa khít, hãy hướng tới CAD. Nếu chỉ cần một vật trang trí để xem, lưới 3D có thể đủ.</p>
+
+<h2 id="huong-tiep-can">Ba hướng tiếp cận phổ biến</h2>
+<h3>1. Công cụ text-to-CAD chuyên biệt</h3>
+<p>Dịch vụ nhận mô tả và trả về mô hình CAD, có thể tải xuống hoặc chỉnh trong trình duyệt. Tiện cho người không rành CAD, nhưng mức độ kiểm soát và độ chính xác phụ thuộc vào từng sản phẩm.</p>
+<h3>2. Dùng mô hình ngôn ngữ để sinh mã CAD tham số</h3>
+<p>Bạn mô tả vật thể, mô hình ngôn ngữ viết mã cho các công cụ CAD dạng mã như OpenSCAD hoặc CadQuery, rồi bạn chạy mã để dựng mô hình. Cách này cho phép bạn đọc, sửa và kiểm soát từng kích thước, và tái sử dụng được.</p>
+<h3>3. Tính năng AI trong phần mềm CAD sẵn có</h3>
+<p>Một số phần mềm CAD đang bổ sung trợ lý AI giúp tạo hoặc gợi ý hình học. Tính năng này thay đổi theo từng phiên bản, hãy xem tài liệu của phần mềm bạn đang dùng.</p>
+
+<h2 id="quy-trinh">Quy trình làm việc đề xuất</h2>
+{{fig:text-to-cad|AI giúp dựng bản nháp nhanh, nhưng bước kiểm tra kích thước vẫn là việc của bạn.}}
+<ol>
+<li><strong>Mô tả bằng chữ:</strong> nêu hình dạng, kích thước, vật liệu và ràng buộc.</li>
+<li><strong>Để AI sinh mô hình hoặc mã:</strong> với cách mã tham số, bạn có kết quả dễ đọc và sửa.</li>
+<li><strong>Dựng và xem:</strong> chạy mã, quan sát mô hình, so với ý định.</li>
+<li><strong>Kiểm tra kích thước:</strong> đo các chiều quan trọng, so với yêu cầu thực tế. Nếu sai, quay lại chỉnh mô tả.</li>
+<li><strong>Xuất tệp:</strong> STL cho in 3D, STEP cho trao đổi với phần mềm CAD và gia công.</li>
+</ol>
+
+<h2 id="viet-mo-ta">Cách viết mô tả để kết quả chính xác</h2>
+<pre>Thiết kế giá đỡ điện thoại để bàn:
+- Đế hình chữ nhật 80 x 60 mm, dày 5 mm, bo góc 8 mm.
+- Thanh đỡ nghiêng 65 độ so với mặt bàn, cao 90 mm.
+- Rãnh giữ điện thoại rộng 12 mm, sâu 10 mm.
+- Một lỗ luồn dây sạc đường kính 10 mm ở phía sau.
+- Có thể in 3D không cần giá đỡ phụ (thành dày tối thiểu 2 mm).
+- Đơn vị: milimét.</pre>
+<p>Những điều làm mô tả tốt hơn:</p>
+<ul>
+<li><strong>Nêu số và đơn vị:</strong> "80 x 60 x 5 mm" tốt hơn "một cái đế nhỏ".</li>
+<li><strong>Nêu quan hệ giữa các bộ phận:</strong> lỗ nằm ở đâu so với cạnh, bo góc bao nhiêu.</li>
+<li><strong>Nêu cách sản xuất:</strong> in 3D, cắt laser hay phay CNC ảnh hưởng độ dày và cách thiết kế.</li>
+<li><strong>Chia vật phức tạp thành từng chi tiết</strong> rồi ghép lại.</li>
+</ul>
+
+<h2 id="ung-dung">Ứng dụng phù hợp</h2>
+<ul>
+<li>Chi tiết tùy chỉnh đơn giản: giá đỡ, nắp, hộp, tay cầm, đầu nối.</li>
+<li>Tạo nhanh nguyên mẫu để cầm thử trước khi thiết kế chi tiết.</li>
+<li>Biến thể theo tham số: cùng một hộp nhưng khác kích thước.</li>
+<li>Học CAD: đọc mã do AI sinh để hiểu cách mô hình được dựng.</li>
+</ul>
+
+<h2 id="gioi-han">Giới hạn cần biết</h2>
+<ul>
+<li><strong>Độ chính xác không bảo đảm:</strong> AI có thể hiểu sai kích thước hoặc bỏ sót ràng buộc.</li>
+<li><strong>Chi tiết phức tạp còn yếu:</strong> cụm lắp ráp nhiều bộ phận, bề mặt tự do thường cần làm thủ công.</li>
+<li><strong>Không thay thế phân tích kỹ thuật:</strong> độ bền, dung sai, an toàn cần được kiểm tra bởi người có chuyên môn.</li>
+<li><strong>Quyền sở hữu và bảo mật:</strong> cân nhắc khi đưa thiết kế nhạy cảm lên dịch vụ trực tuyến.</li>
+</ul>
+<div class="callout"><p><strong>Lời khuyên:</strong> dùng AI để rút ngắn bước dựng bản nháp, còn đo đạc, kiểm tra và quyết định thiết kế cuối cùng vẫn là việc của bạn. In thử một bản nhỏ trước khi sản xuất số lượng lớn.</p></div>
+<p>Nếu muốn mô tả yêu cầu chặt chẽ hơn, xem <a href="/json-prompt-la-gi/">JSON prompt là gì</a> và <a href="/prompt-engineering-claude-a-z-huong-dan-toan-dien-tu-anthropic/">kỹ thuật viết prompt hiệu quả</a>. Muốn tự động hóa chuỗi công việc này, đọc <a href="/tu-dong-hoa-quy-trinh-cong-viec-bang-ai-agent/">tự động hóa quy trình bằng AI Agent</a>.</p>

@@ -258,9 +258,94 @@ def f_lo_trinh():
     )
 
 
+def f_plus_api():
+    n = "plus-api"
+    inner = text(140, 22, "ChatGPT Plus", "t") + text(420, 22, "ChatGPT API", "t")
+    left = [("Bạn", ["dùng trực tiếp"], ""), ("Ứng dụng trò chuyện", ["web, điện thoại"], "b"), ("Thuê bao cố định", ["trả theo tháng"], "a")]
+    right = [("Phần mềm của bạn", ["website, quy trình, agent"], ""), ("API", ["gọi mô hình từ mã hoặc công cụ"], "b"), ("Trả theo lượng dùng", ["tính theo token vào và ra"], "a")]
+    for col, items in ((20, left), (300, right)):
+        for i, (t, sb, k) in enumerate(items):
+            y = 40 + i * 84
+            inner += box(col, y, 240, 58, t, sb, k)
+            if i:
+                inner += arrow(n, [(col + 120, y - 24), (col + 120, y - 2)])
+    return svg(n, "ChatGPT Plus thuê bao cố định so với ChatGPT API trả theo lượng dùng", 280, inner)
+
+
+def f_vong_cai_thien():
+    return cycle4(
+        "vong-cai-thien", "Vòng cải thiện prompt: viết, chạy bộ kiểm thử, xem ca sai, chỉnh một yếu tố",
+        [("Viết prompt", ["theo cấu trúc rõ ràng"]), ("Chạy bộ kiểm thử", ["20 đến 50 ví dụ có đáp án"]),
+         ("Xem các ca sai", ["thiếu chỉ dẫn hay ví dụ?"]), ("Chỉnh một yếu tố", ["rồi đo lại"])],
+        "mỗi lần chỉ đổi một thứ",
+    )
+
+
+def f_nhom_slide():
+    n = "nhom-slide"
+    cols = [("Tích hợp sẵn", ["Copilot (PowerPoint)", "Gemini (Slides)", "Canva"], "b"),
+            ("Chuyên biệt", ["Gamma", "Beautiful.ai", "Pitch", "Prezi", "Visme"], "a"),
+            ("Tiện ích thêm", ["SlidesAI", "Plus AI", "Decktopus"], "b")]
+    inner = ""
+    for i, (t, subs, k) in enumerate(cols):
+        x = 10 + i * 185
+        inner += box(x, 14, 170, 150, t, subs, k)
+    inner += text(95, 190, "3 công cụ", "s") + text(280, 190, "5 công cụ", "s") + text(465, 190, "3 công cụ", "s")
+    return svg(n, "11 ứng dụng AI làm PowerPoint chia thành ba nhóm", 204, inner)
+
+
+def cam(x, y, rot=0):
+    return (f'<g transform="translate({x} {y}) rotate({rot})"><rect x="-11" y="-7" width="22" height="14" rx="3" class="dot a"/>'
+            f'<path d="M11 -4 L20 -9 L20 9 L11 4z" class="dot a"/></g>')
+
+
+def f_camera():
+    n = "camera"
+    panels = [(15, 10), (285, 10), (15, 146), (285, 146)]
+    labels = ["Pan: xoay ngang tại chỗ", "Dolly: tiến lại gần chủ thể", "Orbit: quay quanh chủ thể", "Crane: nâng lên theo chiều dọc"]
+    inner = ""
+    for (x, y), lab in zip(panels, labels):
+        inner += f'<rect x="{x}" y="{y}" width="260" height="122" rx="14" class="box b"/>' + text(x + 130, y + 110, lab, "s")
+    x, y = panels[0]
+    inner += cam(x + 70, y + 52) + f'<path d="M{x+110} {y+30} Q{x+160} {y+8} {x+205} {y+30}" class="arr" marker-end="url(#ah-{n})"/>'
+    inner += f'<path d="M{x+110} {y+52} L{x+205} {y+52}" class="thin"/>'
+    x, y = panels[1]
+    inner += cam(x + 44, y + 52) + arrow(n, [(x + 76, y + 52), (x + 150, y + 52)]) + f'<circle cx="{x+205}" cy="{y+52}" r="15" class="dot"/>'
+    x, y = panels[2]
+    inner += f'<circle cx="{x+130}" cy="{y+52}" r="40" class="thin" stroke-dasharray="5 5"/><circle cx="{x+130}" cy="{y+52}" r="13" class="dot"/>'
+    inner += cam(x + 170, y + 52, 90) + f'<path d="M{x+177} {y+70} Q{x+160} {y+88} {x+134} {y+92}" class="arr" marker-end="url(#ah-{n})"/>'
+    x, y = panels[3]
+    inner += cam(x + 70, y + 86) + arrow(n, [(x + 70, y + 70), (x + 70, y + 20)]) + f'<circle cx="{x+190}" cy="{y+52}" r="15" class="dot"/>'
+    return svg(n, "Bốn chuyển động camera cơ bản nhìn từ trên xuống: pan, dolly, orbit, crane", 284, inner)
+
+
+def f_nhom_phong_cach():
+    n = "nhom-phong-cach"
+    groups = [("Ảnh chụp, điện ảnh", "phong cách 1 đến 10", ""), ("Hoạt hình, minh họa", "phong cách 11 đến 20", "b"),
+              ("Hội họa, nghệ thuật", "phong cách 21 đến 30", "b"), ("Đồ họa, thiết kế", "phong cách 31 đến 40", ""),
+              ("3D, sáng tạo", "phong cách 41 đến 50", "a")]
+    pos = [(15, 14), (285, 14), (15, 100), (285, 100), (150, 186)]
+    inner = ""
+    for (t, sb, k), (x, y) in zip(groups, pos):
+        inner += box(x, y, 260, 70, t, [sb], k)
+    return svg(n, "50 phong cách tạo hình chia thành năm nhóm, mỗi nhóm mười phong cách", 270, inner)
+
+
+def f_text_to_cad():
+    return vflow(
+        "text-to-cad", "Quy trình từ mô tả bằng chữ đến mô hình CAD",
+        [("Mô tả bằng chữ", "Kích thước, hình dạng, ràng buộc"), ("AI sinh mã tham số", "OpenSCAD, CadQuery hoặc tập lệnh CAD"),
+         ("Chạy mã dựng mô hình", "Ra bản 3D có thể chỉnh sửa"), ("Kiểm tra kích thước", "So với yêu cầu, đo thử"),
+         ("Xuất tệp sản xuất", "STL, STEP cho in 3D hoặc gia công")],
+        accent={1}, loop=(3, 0),
+    )
+
+
 FIGS = {
     "vong-lap": f_vong_lap, "chatbot-agent": f_chatbot_agent, "mcp-kien-truc": f_mcp_kien_truc, "mcp-mxn": f_mcp_mxn,
     "luong-tu-dong": f_luong_tu_dong, "luong-email": f_luong_email, "bay-buoc": f_bay_buoc, "cay-quyet-dinh": f_cay_quyet_dinh,
     "pho-cong-cu": f_pho_cong_cu, "json-cau-truc": f_json, "vong-phan-bien": f_vong_phan_bien, "gamma": f_gamma,
     "phuc-che": f_phuc_che, "lo-trinh": f_lo_trinh,
+    "plus-api": f_plus_api, "vong-cai-thien": f_vong_cai_thien, "nhom-slide": f_nhom_slide, "camera": f_camera,
+    "nhom-phong-cach": f_nhom_phong_cach, "text-to-cad": f_text_to_cad,
 }

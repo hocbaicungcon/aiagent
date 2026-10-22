@@ -1,0 +1,82 @@
+slug: mau-prompt-cac-loai-chuyen-dong-camera-camera-movement
+title: Mẫu prompt các loại chuyển động camera (camera movement) cho AI tạo video
+description: Bộ mẫu prompt mô tả chuyển động camera khi dùng AI tạo video: pan, tilt, dolly, tracking, zoom, orbit, crane, handheld. Giải thích từng kiểu và cách ghép với bối cảnh để kết quả đúng ý.
+category: Tutorials
+keyword: prompt camera movement, mẫu prompt chuyển động camera, prompt ai tạo video
+published: 2026-10-22
+read: 7
+faq: Vì sao nên mô tả chuyển động camera trong prompt video? || Nếu không mô tả, công cụ sẽ tự chọn cách quay, thường là cảnh tĩnh hoặc chuyển động ngẫu nhiên. Nêu rõ camera di chuyển thế nào giúp kết quả điện ảnh và đúng ý đồ hơn.
+faq: Nên viết prompt camera bằng tiếng Việt hay tiếng Anh? || Nhiều công cụ AI video hiểu thuật ngữ quay phim tiếng Anh ổn định hơn. Bạn có thể mô tả cảnh bằng tiếng Việt rồi giữ thuật ngữ camera bằng tiếng Anh như "dolly in", "tracking shot".
+faq: Một cảnh nên dùng mấy chuyển động camera? || Thường một chuyển động chính cho mỗi cảnh ngắn. Ghép quá nhiều chuyển động trong vài giây dễ cho kết quả rối hoặc méo hình.
+faq: Công cụ nào cũng hiểu mọi thuật ngữ camera không? || Không. Mỗi công cụ phản ứng khác nhau. Hãy thử vài lần, ghi lại cách diễn đạt nào cho kết quả đúng và lưu thành thư viện của riêng bạn.
+
+<p>Khi tạo video bằng AI, <strong>mô tả chuyển động camera</strong> là cách nhanh nhất để cảnh quay trông có chủ đích thay vì ngẫu nhiên. Bài này tổng hợp các kiểu chuyển động phổ biến, kèm mẫu prompt bạn thay nội dung vào là dùng được. Mỗi công cụ AI video hiểu thuật ngữ theo cách riêng, nên hãy thử và ghi lại cách diễn đạt nào hiệu quả với công cụ của bạn.</p>
+
+<h2 id="cong-thuc">Công thức prompt cho một cảnh quay</h2>
+<pre>[Kiểu chuyển động camera] + [chủ thể đang làm gì] + [bối cảnh]
++ [ánh sáng, không khí] + [phong cách hình ảnh] + [tốc độ]</pre>
+<p>Ví dụ: <em>"Slow dolly in on an old woman pouring tea, small Hanoi cafe, warm morning light, cinematic, shallow depth of field."</em></p>
+
+<h2 id="chuyen-dong-co-ban">Các chuyển động camera cơ bản</h2>
+{{fig:camera|Nhìn từ trên xuống: hình tròn là chủ thể, biểu tượng xanh là camera, mũi tên là hướng chuyển động.}}
+<table>
+<thead><tr><th>Kiểu</th><th>Mô tả</th><th>Hiệu ứng cảm xúc</th></tr></thead>
+<tbody>
+<tr><td>Static shot (cố định)</td><td>Camera đứng yên</td><td>Ổn định, nhấn vào hành động hoặc biểu cảm</td></tr>
+<tr><td>Pan</td><td>Camera xoay ngang tại chỗ</td><td>Quét cảnh, giới thiệu không gian</td></tr>
+<tr><td>Tilt</td><td>Camera ngẩng lên hoặc cúi xuống</td><td>Cho thấy chiều cao, tiết lộ chủ thể</td></tr>
+<tr><td>Dolly in / out</td><td>Camera tiến lại gần hoặc lùi xa chủ thể</td><td>Tăng căng thẳng hoặc tạo khoảng cách</td></tr>
+<tr><td>Tracking shot</td><td>Camera di chuyển song song cùng chủ thể</td><td>Đồng hành, nhịp độ liên tục</td></tr>
+<tr><td>Zoom in / out</td><td>Thay đổi tiêu cự, camera không đổi vị trí</td><td>Thu hút sự chú ý, hiệu ứng kịch tính</td></tr>
+<tr><td>Orbit / arc</td><td>Camera quay vòng quanh chủ thể</td><td>Tôn vinh chủ thể, cảm giác 3D</td></tr>
+<tr><td>Crane / jib</td><td>Camera nâng lên hoặc hạ xuống theo chiều dọc</td><td>Hoành tráng, mở hoặc kết cảnh</td></tr>
+<tr><td>Handheld</td><td>Camera cầm tay rung nhẹ</td><td>Chân thực, như phim tài liệu</td></tr>
+<tr><td>Drone / aerial</td><td>Góc nhìn từ trên cao bay lượn</td><td>Toàn cảnh, quy mô lớn</td></tr>
+</tbody>
+</table>
+
+<h2 id="mau-prompt">Mẫu prompt theo từng kiểu</h2>
+<h3>Pan (xoay ngang)</h3>
+<pre>Slow pan from left to right across a misty rice terrace at sunrise,
+soft golden light, cinematic wide shot.</pre>
+<h3>Tilt (ngẩng lên)</h3>
+<pre>Tilt up from the base to the top of a tall glass skyscraper
+reflecting the evening sky, smooth steady motion.</pre>
+<h3>Dolly in (tiến vào)</h3>
+<pre>Slow dolly in toward a lone coffee cup on a rainy window sill,
+moody blue light, shallow depth of field.</pre>
+<h3>Tracking shot (đi theo)</h3>
+<pre>Tracking shot following a girl riding a bicycle down a tree-lined
+street, side view, steady camera, warm afternoon sun.</pre>
+<h3>Orbit (quay quanh)</h3>
+<pre>Camera orbits 180 degrees around a sculpture in a quiet museum hall,
+soft spotlight, smooth cinematic movement.</pre>
+<h3>Crane (nâng lên)</h3>
+<pre>Crane shot rising slowly from a close-up of a farmer's hands
+to a wide view of the whole green field at golden hour.</pre>
+<h3>Handheld (cầm tay)</h3>
+<pre>Handheld camera, slight natural shake, following a street vendor
+preparing food in a busy night market, documentary style.</pre>
+<h3>Zoom (thu phóng)</h3>
+<pre>Slow zoom in on the eyes of a man looking out of a train window,
+neon lights reflecting, tense atmosphere.</pre>
+
+<h2 id="meo">Mẹo để camera chuyển động đúng ý</h2>
+<ul>
+<li><strong>Một chuyển động chính cho mỗi cảnh:</strong> cảnh ngắn vài giây chỉ nên có một kiểu.</li>
+<li><strong>Thêm tốc độ:</strong> dùng "slow", "smooth", "steady", "gentle" để tránh chuyển động giật hoặc quá nhanh.</li>
+<li><strong>Nêu hướng:</strong> "left to right", "upward", "toward the subject".</li>
+<li><strong>Mô tả chủ thể đơn giản:</strong> càng nhiều chủ thể và hành động, camera càng dễ hỗn loạn.</li>
+<li><strong>Giữ nhất quán giữa các cảnh:</strong> cùng phong cách ánh sáng và màu để ghép lại liền mạch.</li>
+<li><strong>Xây thư viện riêng:</strong> lưu prompt cho kết quả tốt, kèm công cụ và phiên bản đã dùng.</li>
+</ul>
+
+<h2 id="loi">Lỗi thường gặp</h2>
+<ul>
+<li>Viết "camera di chuyển" chung chung, công cụ tự chọn kiểu ngẫu nhiên.</li>
+<li>Ghép dolly, pan, zoom trong cùng một cảnh ngắn dẫn đến méo hình.</li>
+<li>Chủ thể thay đổi hình dạng khi camera quay quanh, nên giảm độ phức tạp hoặc rút ngắn cảnh.</li>
+<li>Quên mô tả ánh sáng và phong cách, khiến video thiếu cảm xúc.</li>
+</ul>
+<div class="callout"><p><strong>Nhắc lại:</strong> đây là thuật ngữ quay phim chung, không phải bảo đảm cho mọi công cụ. Hãy thử vài biến thể và so sánh.</p></div>
+<p>Nếu muốn tổ chức prompt thành khung có cấu trúc để dùng lại nhiều lần, xem <a href="/json-prompt-la-gi/">JSON prompt là gì</a>.</p>
