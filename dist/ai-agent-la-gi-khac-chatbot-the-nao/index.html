@@ -57,7 +57,7 @@
 <p>Vòng lặp dừng khi agent cho rằng đã xong, hoặc khi chạm giới hạn mà người xây dựng đặt ra (số bước, thời gian, chi phí).</p>
 
 <h2 id="thanh-phan">Bốn thành phần chính của một AI Agent</h2>
-<table>
+<div class="table-wrap"><table>
 <thead><tr><th>Thành phần</th><th>Vai trò</th><th>Ví dụ</th></tr></thead>
 <tbody>
 <tr><td>Mô hình ngôn ngữ</td><td>Suy luận, hiểu yêu cầu, quyết định bước tiếp theo</td><td>Claude, GPT, Gemini</td></tr>
@@ -65,11 +65,11 @@
 <tr><td>Bộ nhớ</td><td>Lưu ngữ cảnh ngắn hạn và kiến thức dài hạn</td><td>Lịch sử hội thoại, tài liệu nội bộ</td></tr>
 <tr><td>Quy tắc và giới hạn</td><td>Giữ agent làm đúng phạm vi</td><td>"Không được xóa dữ liệu", "hỏi lại khi dưới 80% chắc chắn"</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2 id="khac-chatbot">AI Agent khác chatbot ở đâu?</h2>
 <p>Ranh giới không phải lúc nào cũng rõ, vì nhiều chatbot hiện đại đã có thêm tính năng của agent. Nhưng về bản chất có thể so sánh như sau:</p>
-<table>
+<div class="table-wrap"><table>
 <thead><tr><th>Tiêu chí</th><th>Chatbot truyền thống</th><th>AI Agent</th></tr></thead>
 <tbody>
 <tr><td>Cách làm việc</td><td>Hỏi một câu, trả lời một câu</td><td>Nhận mục tiêu, tự thực hiện nhiều bước</td></tr>
@@ -78,7 +78,7 @@
 <tr><td>Kết quả</td><td>Văn bản trả lời</td><td>Công việc hoàn thành (tệp, email, bản ghi được cập nhật)</td></tr>
 <tr><td>Rủi ro</td><td>Trả lời sai thông tin</td><td>Trả lời sai và làm sai hành động</td></tr>
 </tbody>
-</table>
+</table></div>
 <div class="callout"><p><strong>Cách nhớ nhanh:</strong> chatbot <em>nói</em>, agent <em>làm</em>. Chính vì agent có thể làm, bạn cần thiết kế kiểm soát cẩn thận hơn nhiều.</p></div>
 
 <figure class="figure"><svg class="dg" viewBox="0 0 560 290" role="img" aria-label="So sánh chatbot chỉ trả lời với AI Agent tự thực hiện nhiều bước" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah-chatbot-agent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" class="ahead"/></marker></defs><text x="140" y="26" class="t" text-anchor="middle">Chatbot</text><text x="420" y="26" class="t" text-anchor="middle">AI Agent</text><rect x="30" y="44" width="220" height="52" rx="14" class="box "/><text x="140.0" y="65.0" class="t " text-anchor="middle">Bạn hỏi</text><text x="140.0" y="82.0" class="s " text-anchor="middle">một câu</text><path d="M140 98 L140 120" class="arr" marker-end="url(#ah-chatbot-agent)"/><rect x="30" y="122" width="220" height="52" rx="14" class="box b"/><text x="140.0" y="143.0" class="t b" text-anchor="middle">AI trả lời</text><text x="140.0" y="160.0" class="s b" text-anchor="middle">bằng văn bản</text><rect x="310" y="44" width="220" height="44" rx="14" class="box "/><text x="420.0" y="70.5" class="t " text-anchor="middle">Bạn giao mục tiêu</text><rect x="310" y="106" width="220" height="44" rx="14" class="box "/><text x="420.0" y="132.5" class="t " text-anchor="middle">Agent lập kế hoạch</text><path d="M420 90 L420 105" class="arr" marker-end="url(#ah-chatbot-agent)"/><rect x="310" y="168" width="220" height="44" rx="14" class="box "/><text x="420.0" y="194.5" class="t " text-anchor="middle">Dùng công cụ, kiểm tra</text><path d="M420 152 L420 167" class="arr" marker-end="url(#ah-chatbot-agent)"/><rect x="310" y="230" width="220" height="44" rx="14" class="box a"/><text x="420.0" y="256.5" class="t a" text-anchor="middle">Công việc hoàn thành</text><path d="M420 214 L420 229" class="arr" marker-end="url(#ah-chatbot-agent)"/><path d="M530 190 L548 190 L548 128 L532 128" class="arr dash" marker-end="url(#ah-chatbot-agent)"/><text x="140" y="214" class="s" text-anchor="middle">chatbot nói</text><text x="140" y="232" class="t" text-anchor="middle">agent làm</text></svg><figcaption>Chatbot dừng ở câu trả lời, AI Agent tiếp tục làm cho đến khi xong việc.</figcaption></figure>

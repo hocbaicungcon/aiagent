@@ -59,7 +59,8 @@ def render_figs(body):
         name, _, cap = m.group(1).partition("|")
         return f'<figure class="figure">{FIGS[name.strip()]()}<figcaption>{e(cap.strip())}</figcaption></figure>'
 
-    return re.sub(r"\{\{fig:(.*?)\}\}", sub, body)
+    body = re.sub(r"\{\{fig:(.*?)\}\}", sub, body)
+    return re.sub(r"(<table>.*?</table>)", r'<div class="table-wrap">\1</div>', body, flags=re.S)
 
 
 def toc(body):
