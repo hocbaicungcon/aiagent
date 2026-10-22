@@ -78,7 +78,7 @@ def faq_html(faq):
     return f'<section class="faq" aria-labelledby="faq-title"><h2 id="faq-title">Câu hỏi thường gặp</h2>{rows}</section>'
 
 
-def head(title, description, url, og_type="website", extra=""):
+def head(title, description, url, og_type="website", extra="", image="default"):
     return f"""<!doctype html>
 <html lang="vi">
 <head>
@@ -95,8 +95,12 @@ def head(title, description, url, og_type="website", extra=""):
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(description)}">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="{SITE}/assets/og.svg">
+<meta property="og:image" content="{SITE}/og/{image}.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{e(title)}">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{SITE}/og/{image}.png">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -141,7 +145,7 @@ def article_page(a, all_articles):
             "datePublished": a["published"],
             "dateModified": a.get("updated", a["published"]),
             "mainEntityOfPage": url,
-            "image": f"{SITE}/assets/og.svg",
+            "image": f"{SITE}/og/{a['slug']}.png",
             "keywords": a["keyword"],
             "author": {"@type": "Organization", "name": SITE_NAME, "url": SITE},
             "publisher": {"@type": "Organization", "name": SITE_NAME, "url": SITE},
@@ -171,7 +175,7 @@ def article_page(a, all_articles):
         f'<a href="/{r["slug"]}/"><small>{e(r["category"])}</small><strong>{e(r["title"])}</strong></a>' for r in related
     )
     return (
-        head(f"{a['title']} | {SITE_NAME}", a["description"], url, "article", jsonld(*schema))
+        head(f"{a['title']} | {SITE_NAME}", a["description"], url, "article", jsonld(*schema), a["slug"])
         + chrome_top()
         + f"""<main class="narrow">
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Trang chủ</a> › <a href="/bai-viet/">Bài viết</a> › {e(a['category'])}</nav>

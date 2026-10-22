@@ -37,4 +37,4 @@ Nếu muốn `www.aiagent.vn` cũng hoạt động, tạo `CNAME` tên `www` tr�
 
 ## Chỉnh sửa
 
-Trang chủ nằm ở `dist/index.html`. Bài viết nằm trong `content/*.html`; sau khi sửa hoặc thêm bài, chạy `python3 scripts/build.py` (sinh `dist/<slug>/`, `dist/bai-viet/`, `sitemap.xml`, `robots.txt`; thêm slug mới vào `ORDER` trong script), rồi commit và push lên `main`. Workflow sẽ tự xuất bản.
+Ảnh chia sẻ (`dist/og/*.png`) sinh bằng `python3 scripts/og_images.py` (cần Google Chrome), chạy lại khi thêm bài hoặc đổi tiêu đề. Trang chủ nằm ở `dist/index.html`. Bài viết nằm trong `content/*.html`; sau khi sửa hoặc thêm bài, chạy `python3 scripts/build.py` (sinh `dist/<slug>/`, `dist/bai-viet/`, `sitemap.xml`, `robots.txt`; thêm slug mới vào `ORDER` trong script), rồi commit và push lên `main`. Workflow sẽ tự xuất bản.
